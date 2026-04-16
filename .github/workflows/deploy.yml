@@ -61,7 +61,7 @@ jobs:
 
       - name: Merge with docc output
         run: |
-          rm .docc-build/index.html
+          rm docc-build/index.html
           mv ./static/*.html ./docc-build/
           mv ./static/css/styles.css ./docc-build/css/styles.css
 
