@@ -27,7 +27,7 @@ jobs:
           lfs: true
 
       - name: Build with DocC
-        run: xcrun docc convert GodotTemplateIOS.docc/
+        run: xcrun docc convert ShipGodotIOS.docc/
 
       - name: Upload Exported Tutorial
         uses: actions/upload-artifact@v6
