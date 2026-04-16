@@ -35,6 +35,7 @@ jobs:
           name: docc-build
           path: ./GodotTemplateIOS.docc/.docc-build/
           retention-days: 1
+
   build:
     needs: build-docc
     runs-on: ubuntu-latest
@@ -73,7 +74,7 @@ jobs:
           path: './docc-build'
 
   deploy:
-    needs: build, build-docc
+    needs: build
     runs-on: ubuntu-latest
 
     permissions:
