@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're In! — ShipGodot</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-zinc-950 text-zinc-100 font-mono antialiased min-h-screen">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-zinc-950/80 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="index.html" class="font-display text-lg tracking-tight text-zinc-100 hover:text-white transition-colors">
+        Ship<span class="text-zinc-400">Godot</span>
+      </a>
+      <div class="flex items-center gap-6 text-sm text-zinc-400">
+        <a href="index.html#features" class="hover:text-zinc-100 transition-colors hidden sm:block">Features</a>
+        <a href="index.html#pricing" class="hover:text-zinc-100 transition-colors hidden sm:block">Pricing</a>
+        <a href="redeem.html"
+          class="btn-primary px-4 py-1.5 rounded-lg bg-zinc-100 text-zinc-950 text-sm font-medium hover:bg-white transition-colors">
+          Get Access
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="min-h-screen flex flex-col items-center justify-center px-6 py-24">
+
+    <!-- Ambient green glow -->
+    <div class="pointer-events-none fixed inset-0 flex items-center justify-center">
+      <div class="w-[400px] h-[300px] bg-emerald-900/15 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="relative w-full max-w-md text-center animate-fade-up">
+
+      <!-- Check icon -->
+      <div class="w-20 h-20 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mx-auto mb-8 relative overflow-hidden">
+        <div class="absolute inset-0 bg-emerald-900/20"></div>
+        <svg class="w-9 h-9 text-emerald-400 relative" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+        </svg>
+      </div>
+
+      <div class="glow-card rounded-2xl p-8 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
+
+        <h1 class="font-display text-3xl text-white mb-2">You're in!</h1>
+        <p class="text-zinc-400 text-sm leading-relaxed mb-8">
+          You've been added as a collaborator to the ShipGodot template repository.
+          Head to GitHub and start shipping.
+        </p>
+
+        <!-- Steps -->
+        <div class="text-left space-y-3 mb-8">
+          <div class="flex items-start gap-3 p-3 rounded-xl bg-zinc-900/80 border border-zinc-800">
+            <div class="w-5 h-5 rounded-full bg-emerald-900/40 border border-emerald-700/40 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            </div>
+            <div>
+              <p class="text-xs text-zinc-300 font-medium">1. Accept the invite</p>
+              <p class="text-xs text-zinc-600 mt-0.5">Check your GitHub notifications or email for a collaboration invite.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-xl bg-zinc-900/80 border border-zinc-800">
+            <div class="w-5 h-5 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center shrink-0 mt-0.5">
+              <span class="text-[9px] text-zinc-400 font-mono">2</span>
+            </div>
+            <div>
+              <p class="text-xs text-zinc-300 font-medium">2. Use the template</p>
+              <p class="text-xs text-zinc-600 mt-0.5">Click "Use this template" to create your own private repo.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-xl bg-zinc-900/80 border border-zinc-800">
+            <div class="w-5 h-5 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center shrink-0 mt-0.5">
+              <span class="text-[9px] text-zinc-400 font-mono">3</span>
+            </div>
+            <div>
+              <p class="text-xs text-zinc-300 font-medium">3. Follow the README</p>
+              <p class="text-xs text-zinc-600 mt-0.5">Add your Apple secrets and push to trigger your first build.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://github.com" target="_blank" rel="noopener"
+          class="btn-primary w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-zinc-100 text-zinc-950 font-medium text-sm hover:bg-white transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+          Open GitHub →
+        </a>
+      </div>
+
+      <a href="index.html" class="inline-block mt-6 text-xs text-zinc-700 hover:text-zinc-500 transition-colors">
+        ← Back to shipgodot.com
+      </a>
+
+      <div class="h-14"></div>
+      <footer class="border-t border-zinc-800/60 py-10 px-6">
+        <div class="max-w-2xl mx-auto text-center">
+          <p class="font-display text-base text-zinc-600 mb-1">Ship<span class="text-zinc-700">Godot</span></p>
+          <p class="text-xs text-zinc-700 mb-4">© 2026 ShipGodot. All rights reserved.</p>
+          <p class="text-[11px] text-zinc-700 leading-relaxed max-w-md mx-auto">
+            ShipGodot is not affiliated with or endorsed by the Godot Foundation.
+            ShipGodot uses the GODOT<sup>®</sup> name under a permissive license granted by the Godot Foundation.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
