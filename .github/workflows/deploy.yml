@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: docc-build
-          path: ./GodotTemplateIOS.docc/.docc-build/
+          path: ./ShipGodotIOS.docc/.docc-build/
           retention-days: 1
 
   build:
