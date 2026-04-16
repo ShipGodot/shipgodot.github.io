@@ -27,13 +27,13 @@ jobs:
           lfs: true
 
       - name: Build with DocC
-        run: xcrun docc convert ShipGodotIOS.docc/
+        run: xcrun docc convert ShipGodotIOS.docc/  --output-path ./docc-output
 
       - name: Upload Exported Tutorial
         uses: actions/upload-artifact@v6
         with:
           name: docc-build
-          path: ./ShipGodotIOS.docc/.docc-build/
+          path: ./docc-output
           retention-days: 1
 
   build:
