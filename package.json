@@ -1,0 +1,16 @@
+{
+  "name": "shipgodot.com",
+  "version": "0.0.1",
+  "description": "shipgodot.com website",
+  "license": "ISC",
+  "author": "chacron.one",
+  "scripts": {
+    "build": "npx tailwindcss -i src/styles.css -o static/css/styles.css",
+    "dev": "npm run build && npx http-server static"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}

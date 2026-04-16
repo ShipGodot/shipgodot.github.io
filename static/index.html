@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShipGodot — Ship Godot Games to iOS</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-zinc-950 text-zinc-100 font-mono antialiased min-h-screen">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-zinc-950/80 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="index" class="font-display text-lg tracking-tight text-zinc-100 hover:text-white transition-colors">
+        Ship<span class="text-zinc-400">Godot</span>
+      </a>
+      <div class="flex items-center gap-6 text-sm text-zinc-400">
+        <a href="#features" class="hover:text-zinc-100 transition-colors hidden sm:block">Features</a>
+        <a href="#pricing" class="hover:text-zinc-100 transition-colors hidden sm:block">Pricing</a>
+        <a href="tutorials/table-of-contents" class="hover:text-zinc-100 transition-colors hidden sm:block">Docs</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="dot-grid relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-14 overflow-hidden">
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+      <div class="w-[600px] h-[400px] bg-zinc-600/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="relative max-w-3xl mx-auto">
+      <!-- Headline -->
+      <h1 class="animate-fade-up delay-200 font-display text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight text-white mb-12">
+        Ship your<br/>
+        <span class="text-zinc-400">Godot game</span><br/>
+        to iOS.
+      </h1>
+
+      <div class="animate-fade-up delay-300 max-w-xl mx-auto mb-12 text-center">
+        <p class="text-zinc-400 text-base sm:text-lg leading-relaxed">
+          A GitHub template repository with CI/CD workflows that take your Godot game from
+        </p>
+        <p class="text-zinc-200 font-medium text-base sm:text-lg whitespace-nowrap mt-4 mb-4">
+          Export → Sign → TestFlight
+        </p>
+        <p class="text-zinc-400 text-base sm:text-lg leading-relaxed">
+          in a single push. Every step — secrets, signing, submission — documented so you don't get stuck.
+        </p>
+        <p class="text-zinc-400 text-base sm:text-lg whitespace-nowrap">
+          No Xcode headaches. No certificate nightmares.
+        </p>
+        <p class="text-zinc-200 text-base sm:text-lg whitespace-nowrap mt-4">
+         No Mac required.
+        </p>
+      </div>
+
+      <div class="animate-fade-up delay-400 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#pricing"
+          class="btn-primary px-7 py-3 rounded-xl bg-zinc-100 text-zinc-950 font-medium text-sm hover:bg-white transition-colors">
+          Get Access — $25
+        </a>
+        <a href="#features"
+          class="px-7 py-3 rounded-xl border border-zinc-700 text-zinc-300 text-sm hover:border-zinc-500 hover:text-white transition-colors">
+          See what's included ↓
+        </a>
+      </div>
+
+      <p class="animate-fade-up delay-500 mt-4 text-xs text-zinc-600">
+        From chacron.one — the same pipeline I use to ship my own iOS games.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="max-w-5xl mx-auto px-6 py-28">
+    <div class="text-center mb-16">
+      <h2 class="font-display text-3xl sm:text-4xl text-white mb-3">Everything you need to ship.</h2>
+      <p class="text-zinc-500 text-sm max-w-md mx-auto">The boring parts, handled. You focus on the game.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <div class="glow-card rounded-xl p-6 group hover:bg-zinc-900/80 transition-colors">
+        <div class="icon-ring w-10 h-10 rounded-lg flex items-center justify-center mb-4 border border-zinc-700 group-hover:border-zinc-600 transition-colors">
+          <svg class="w-5 h-5 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        </div>
+        <h3 class="font-display text-base text-zinc-100 mb-2 tracking-wide">Export, Sign & Ship</h3>
+        <p class="text-zinc-500 text-sm leading-relaxed">Trigger the workflow manually when you're ready. It exports your Godot project, signs it, and uploads to TestFlight — all in one run.</p>
+      </div>
+
+      <div class="glow-card rounded-xl p-6 group hover:bg-zinc-900/80 transition-colors">
+        <div class="icon-ring w-10 h-10 rounded-lg flex items-center justify-center mb-4 border border-zinc-700 group-hover:border-zinc-600 transition-colors">
+          <svg class="w-5 h-5 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/></svg>
+        </div>
+        <h3 class="font-display text-base text-zinc-100 mb-2 tracking-wide">Code Signing via Match</h3>
+        <p class="text-zinc-500 text-sm leading-relaxed">Certificates and provisioning profiles are managed automatically by Fastlane Match. No manual signing. No Xcode required.</p>
+      </div>
+
+      <div class="glow-card rounded-xl p-6 group hover:bg-zinc-900/80 transition-colors">
+        <div class="icon-ring w-10 h-10 rounded-lg flex items-center justify-center mb-4 border border-zinc-700 group-hover:border-zinc-600 transition-colors">
+          <svg class="w-5 h-5 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="font-display text-base text-zinc-100 mb-2 tracking-wide">Cache-Optimized Builds</h3>
+        <p class="text-zinc-500 text-sm leading-relaxed">Dependencies and export templates are cached between runs so you're not burning GitHub Actions minutes on repeated downloads.</p>
+      </div>
+
+      <div class="glow-card rounded-xl p-6 group hover:bg-zinc-900/80 transition-colors">
+        <div class="icon-ring w-10 h-10 rounded-lg flex items-center justify-center mb-4 border border-zinc-700 group-hover:border-zinc-600 transition-colors">
+          <svg class="w-5 h-5 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+        </div>
+        <h3 class="font-display text-base text-zinc-100 mb-2 tracking-wide">Step-by-Step Docs</h3>
+        <p class="text-zinc-500 text-sm leading-relaxed">Screenshots at every step, from account setup to App Store submission. <a href="tutorials/table-of-contents" class="text-zinc-400 hover:text-zinc-200 underline underline-offset-2 decoration-zinc-700 hover:decoration-zinc-400 transition-colors">Read them here →</a></p>
+      </div>
+
+      <div class="glow-card rounded-xl p-6 group hover:bg-zinc-900/80 transition-colors">
+        <div class="icon-ring w-10 h-10 rounded-lg flex items-center justify-center mb-4 border border-zinc-700 group-hover:border-zinc-600 transition-colors">
+          <svg class="w-5 h-5 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+        </div>
+        <h3 class="font-display text-base text-zinc-100 mb-2 tracking-wide">Issues & Support</h3>
+        <p class="text-zinc-500 text-sm leading-relaxed">Something not working? Open a GitHub Issue. It's the workflow you already know — no support portals, no ticket systems.</p>
+      </div>
+
+      <div class="glow-card rounded-xl p-6 group hover:bg-zinc-900/80 transition-colors">
+        <div class="icon-ring w-10 h-10 rounded-lg flex items-center justify-center mb-4 border border-zinc-700 group-hover:border-zinc-600 transition-colors">
+          <svg class="w-5 h-5 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.25 0h.008v.008H3.75V12zm0 0a3 3 0 106 0 3 3 0 00-6 0z"/></svg>
+          </div>
+        <h3 class="font-display text-base text-zinc-100 mb-2 tracking-wide">Works with Your Project</h3>
+        <p class="text-zinc-500 text-sm leading-relaxed">Bring your own Godot project. The docs walk you through every configuration step — nothing hidden, nothing to reverse-engineer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="border-y border-zinc-800/60 bg-zinc-900/30 py-24 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="font-display text-3xl sm:text-4xl text-white mb-3">Every step is documented.</h2>
+      <p class="text-zinc-500 text-sm leading-relaxed max-w-lg mx-auto mb-12">
+        From creating your Apple Developer account to publishing on the App Store —
+        the docs cover the full journey, not just the happy path.
+        And they're free to read before you buy.
+      </p>
+      <div class="space-y-4 text-left max-w-md mx-auto mb-10">
+        <div class="flex gap-4">
+          <span class="font-display text-sm text-zinc-600 pt-0.5 w-4 shrink-0">01</span>
+          <div>
+            <h3 class="font-display text-base text-zinc-200 mb-1 tracking-wide">Getting started</h3>
+            <p class="text-zinc-600 text-sm leading-relaxed">Setting up your Apple Developer account, creating a certificates repository, and storing your project credentials.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <span class="font-display text-sm text-zinc-600 pt-0.5 w-4 shrink-0">02</span>
+          <div>
+            <h3 class="font-display text-base text-zinc-200 mb-1 tracking-wide">Reusable credentials</h3>
+            <p class="text-zinc-600 text-sm leading-relaxed">Gathering and securely storing your API keys and deploy keys once — then reusing them across every future project.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <span class="font-display text-sm text-zinc-600 pt-0.5 w-4 shrink-0">03</span>
+          <div>
+            <h3 class="font-display text-base text-zinc-200 mb-1 tracking-wide">Project setup</h3>
+            <p class="text-zinc-600 text-sm leading-relaxed">Configuring your Godot project, creating a deployment repository from the template, and connecting the two — with a real demo project as the example.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <span class="font-display text-sm text-zinc-600 pt-0.5 w-4 shrink-0">04</span>
+          <div>
+            <h3 class="font-display text-base text-zinc-200 mb-1 tracking-wide">Beta testing with TestFlight</h3>
+            <p class="text-zinc-600 text-sm leading-relaxed">Creating your app on App Store Connect, configuring secrets, generating certificates and provisioning profiles, and triggering your first build.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <span class="font-display text-sm text-zinc-600 pt-0.5 w-4 shrink-0">05</span>
+          <div>
+            <h3 class="font-display text-base text-zinc-200 mb-1 tracking-wide">Shipping to the App Store</h3>
+            <p class="text-zinc-600 text-sm leading-relaxed">Deploying updates to testers continuously, and when you're ready, publishing your game for the world to play.</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-zinc-600 text-sm mb-10">...with screenshots and explanations for every step along the way.</p>
+      <a href="tutorials/table-of-contents" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-zinc-700 bg-zinc-900 text-sm text-zinc-300 hover:border-zinc-500 hover:text-white transition-colors">
+        Read the docs — no purchase required
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+      </a>
+    </div>
+  </section>
+  <!-- Pricing -->
+  <section id="pricing" class="max-w-5xl mx-auto px-6 py-28">
+    <div class="text-center mb-12">
+      <h2 class="font-display text-3xl sm:text-4xl text-white mb-3">Simple pricing.</h2>
+      <p class="text-zinc-500 text-sm">One time. No subscriptions. No surprises.</p>
+    </div>
+
+    <div class="max-w-sm mx-auto">
+      <div class="glow-card rounded-2xl p-8 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-zinc-400/40 to-transparent"></div>
+
+        <div class="mb-6">
+          <span class="font-display text-6xl text-white">$25</span>
+          <span class="text-zinc-500 text-sm ml-1">one-time</span>
+        </div>
+
+        <ul class="text-left space-y-3 mb-8 text-sm text-zinc-400">
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-zinc-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            Get lifetime access to the private GitHub repository
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-zinc-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            CI/CD workflows — export, sign, and upload to TestFlight
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-zinc-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            Step-by-step setup documentation
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-zinc-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            Updates included while actively maintained
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-zinc-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            Use on unlimited projects — personal or commercial
+          </li>
+        </ul>
+
+        <p
+          class="btn-primary block w-full py-3 rounded-xl bg-zinc-100 text-zinc-950 font-medium text-sm hover:bg-white transition-colors">
+          Coming Soon
+        </p>
+
+        <p class="mt-4 text-xs text-zinc-600">Have a license key? <a href="redeem" class="text-zinc-500 hover:text-zinc-300 transition-colors">Redeem it here →</a></p>
+        <p class="border-t mt-6 pt-6 text-xs text-zinc-600 text-center leading-relaxed">
+          Builds run on your own GitHub Actions minutes and require an Apple Developer account ($99/year).
+          <a href="#faq" class="text-zinc-500 hover:text-zinc-300 transition-colors">See FAQ →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section id="faq" class="border-t border-zinc-800/60 bg-zinc-900/20 py-24 px-6">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="font-display text-2xl sm:text-3xl text-white mb-10 text-center">FAQ</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-display text-base text-zinc-200 mb-1.5 tracking-wide">Do I need an Apple Developer account?</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Yes. Apple requires an active Developer account ($99/year) to distribute apps. The docs walk you through setting up your account and adding the required credentials — after that, ShipGodot uses Fastlane Match to manage your certificates and provisioning profiles automatically.</p>
+        </div>
+        <div class="border-t border-zinc-800/60 pt-6">
+          <h3 class="font-display text-base text-zinc-200 mb-1.5 tracking-wide">Are there any other costs beyond the license?</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Builds run on GitHub Actions using your own account. GitHub provides a free tier for private repos, but iOS builds run on macOS runners, which count at a higher rate — roughly 200 macOS minutes free per month at current rates (<a href="https://docs.github.com/en/billing/concepts/product-billing/github-actions" class="text-zinc-400 hover:text-zinc-200 underline underline-offset-2 decoration-zinc-700 hover:decoration-zinc-400 transition-colors">check GitHub's pricing</a> for the latest). The workflows are cache-optimized where possible — a full export, sign, and TestFlight upload takes me around 3–4 minutes per build on a typical small-to-medium project, so the free tier comfortably covers dozens of releases per month.</p>
+        </div>
+        <div class="border-t border-zinc-800/60 pt-6">
+          <h3 class="font-display text-base text-zinc-200 mb-1.5 tracking-wide">Which Godot version is supported?</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">The workflows let you specify your Godot version before running the pipeline, so any 4.x release should work. I build and test with Godot 4.6.1.</p>
+        </div>
+        <div class="border-t border-zinc-800/60 pt-6">
+          <h3 class="font-display text-base text-zinc-200 mb-1.5 tracking-wide">Can I use this for multiple games?</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Yes — use it on unlimited projects, personal or commercial. Ship paid games, free games, client work, whatever you want. The only restriction is that you can't resell or redistribute the template itself.</p>
+        </div>
+        <div class="border-t border-zinc-800/60 pt-6">
+          <h3 class="font-display text-base text-zinc-200 mb-1.5 tracking-wide">What if it breaks after an Xcode or Apple update?</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">ShipGodot is actively maintained while I use it for my own projects at chacron.one — when something breaks for me, I fix it and push the update to the template, and your lifetime access means you get every update. That said, no commitment is made to indefinite maintenance. The template is delivered as-is under the license terms, so you own the code you purchased and can adapt it freely.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="border-t border-zinc-800/60 py-10 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="font-display text-base text-zinc-600 mb-1">Ship<span class="text-zinc-700">Godot</span></p>
+      <p class="text-xs text-zinc-700 mb-4">© 2026 ShipGodot. All rights reserved.</p>
+      <nav class="flex items-center justify-center gap-4 mb-4 text-xs text-zinc-600">
+        <a href="license" class="hover:text-zinc-400 transition-colors">License</a>
+        <span class="text-zinc-800">·</span>
+        <a href="#faq" class="hover:text-zinc-400 transition-colors">FAQ</a>
+        <span class="text-zinc-800">·</span>
+        <a href="mailto:support@shipgodot.com" class="hover:text-zinc-400 transition-colors">Contact</a>
+      </nav>
+      <p class="text-[11px] text-zinc-700 leading-relaxed max-w-md mx-auto">
+        ShipGodot is not affiliated with or endorsed by the Godot Foundation.
+        ShipGodot uses the GODOT<sup>®</sup> name under a permissive license granted by the Godot Foundation.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

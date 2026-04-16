@@ -1,0 +1,90 @@
+name: Deploy tutorial to Pages
+
+on:
+  push:
+    branches: [$default-branch]
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-docc:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          repository: shipgodot/docs
+          lfs: true
+
+      - name: Build with DocC
+        run: xcrun docc convert GodotTemplateIOS.docc/
+
+      - name: Upload Exported Tutorial
+        uses: actions/upload-artifact@v6
+        with:
+          name: docc-build
+          path: ./GodotTemplateIOS.docc/.docc-build/
+          retention-days: 1
+  build:
+    needs: build-docc
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: docc-build
+          path: ./docc-build
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Tailwind CSS
+        run: npm run build
+
+      - name: Merge with docc output
+        run: |
+          rm .docc-build/index.html
+          mv ./static/*.html ./docc-build/
+          mv ./static/css/styles.css ./docc-build/css/styles.css
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docc-build'
+
+  deploy:
+    needs: build, build-docc
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
