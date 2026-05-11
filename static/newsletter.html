@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're Subscribed! — ShipGodot</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-zinc-950 text-zinc-100 font-mono antialiased min-h-screen">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-zinc-950/80 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="index" class="font-display text-lg tracking-tight text-zinc-100 hover:text-white transition-colors">
+        Ship<span class="text-zinc-400">Godot</span>
+      </a>
+      <div class="flex items-center gap-6 text-sm text-zinc-400">
+        <a href="tutorials/table-of-contents" class="hover:text-zinc-100 transition-colors hidden sm:block">Docs</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="min-h-screen flex flex-col items-center justify-center px-6 py-24">
+
+    <!-- Ambient green glow -->
+    <div class="pointer-events-none fixed inset-0 flex items-center justify-center">
+      <div class="w-[400px] h-[300px] bg-emerald-900/15 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="relative w-full max-w-md text-center animate-fade-up">
+
+      <!-- Envelope icon -->
+      <div class="w-20 h-20 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mx-auto mb-8 relative overflow-hidden">
+        <div class="absolute inset-0 bg-emerald-900/20"></div>
+        <svg class="w-9 h-9 text-emerald-400 relative" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+        </svg>
+      </div>
+
+      <div class="glow-card rounded-2xl p-8 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
+
+        <h1 class="font-display text-3xl text-white mb-6">Almost there!</h1>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          I just sent you a confirmation email — click the link inside to finish subscribing.
+        </p>
+        <p class="text-zinc-600 text-xs leading-relaxed mt-4 mb-6">
+          Heads up — it can take a minute to arrive, and sometimes lands in spam.
+        </p>
+      </div>
+
+      <a href="index" class="inline-block mt-6 text-xs text-zinc-700 hover:text-zinc-500 transition-colors">
+        ← Back to shipgodot.com
+      </a>
+
+      <div class="h-14"></div>
+      <footer class="border-t border-zinc-800/60 py-10 px-6">
+        <div class="max-w-2xl mx-auto text-center">
+          <p class="font-display text-base text-zinc-600 mb-1">Ship<span class="text-zinc-700">Godot</span></p>
+          <p class="text-xs text-zinc-700 mb-4">© 2026 ShipGodot. All rights reserved.</p>
+          <nav class="flex items-center justify-center gap-4 mb-4 text-xs text-zinc-600">
+            <a href="license" class="hover:text-zinc-400 transition-colors">License</a>
+            <span class="text-zinc-800">·</span>
+            <a href="index#faq" class="hover:text-zinc-400 transition-colors">FAQ</a>
+            <span class="text-zinc-800">·</span>
+            <a href="mailto:support@shipgodot.com" class="hover:text-zinc-400 transition-colors">Contact</a>
+          </nav>
+          <p class="text-[11px] text-zinc-700 leading-relaxed max-w-md mx-auto">
+            ShipGodot is not affiliated with or endorsed by the Godot Foundation.
+            ShipGodot uses the GODOT<sup>®</sup> name under a permissive license granted by the Godot Foundation.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
