@@ -288,6 +288,14 @@
           <p class="text-zinc-500 text-sm leading-relaxed">Yes. Apple requires an active Developer account ($99/year) to distribute apps. The docs walk you through setting up your account and adding the required credentials — after that, ShipGodot uses Fastlane Match to manage your certificates and provisioning profiles automatically.</p>
         </div>
         <div class="border-t border-zinc-800/60 pt-6">
+          <h3 class="font-display text-base text-zinc-200 mb-1.5 tracking-wide">Why a subscription?</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Because Apple never stops moving. As of April 28, 2026, Apple started rejecting any app built with anything older than Xcode 26 and the iOS 26 SDK — pipelines pinned to older toolchains broke overnight. That's one example from a long list of changes that quietly break shipping every year. The subscription is what makes it sustainable for me to keep the template working through all of it: when something breaks, I fix it and push the update, and your active subscription gets it the moment it ships.</p>
+        </div>
+        <div class="border-t border-zinc-800/60 pt-6">
+          <h3 class="font-display text-base text-zinc-200 mb-1.5 tracking-wide">Does this work with Godot Mono / C#?</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">Not yet — only GDScript projects are supported. Godot's Mono iOS export is still marked experimental and isn't reliable enough for production use right now. As soon as the official Mono export matures, I'll gladly add support for it.</p>
+        </div>
+        <div class="border-t border-zinc-800/60 pt-6">
           <h3 class="font-display text-base text-zinc-200 mb-1.5 tracking-wide">Are there any other costs beyond the license?</h3>
           <p class="text-zinc-500 text-sm leading-relaxed">Builds run on GitHub Actions using your own account. GitHub provides a free tier for private repos, but iOS builds run on macOS runners, which count at a higher rate — roughly 200 macOS minutes free per month at current rates (<a href="https://docs.github.com/en/billing/concepts/product-billing/github-actions" class="text-zinc-400 hover:text-zinc-200 underline underline-offset-2 decoration-zinc-700 hover:decoration-zinc-400 transition-colors">check GitHub's pricing</a> for the latest). The workflows are cache-optimized where possible — a full export, sign, and TestFlight upload takes me around 3–4 minutes per build on a typical small-to-medium project, so the free tier comfortably covers dozens of releases per month.</p>
         </div>
