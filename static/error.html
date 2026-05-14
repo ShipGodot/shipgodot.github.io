@@ -53,14 +53,9 @@
 
         <!-- Error code box -->
         <div class="my-6 p-4 rounded-xl bg-zinc-900 border border-zinc-800 text-left">
-          <p class="text-xs text-zinc-600 mb-1 uppercase tracking-wider">Error</p>
+          <p id="error-title" class="text-xs text-zinc-600 mb-1 uppercase tracking-wider">Error</p>
           <p id="error-message" class="text-sm text-red-400 font-mono">An error has occured.</p>
         </div>
-
-        <p class="text-zinc-500 text-sm leading-relaxed mb-8">
-          This can happen if the authorization timed out or the license key was invalid.
-          Please try again — or reach out if the problem persists.
-        </p>
 
         <div class="flex flex-col gap-3">
           <a href="redeem.html"
@@ -101,13 +96,48 @@
   </div>
 </body>
 <script>
+  function getErrorMessage(err) {
+    switch (err) {
+      case 'invalid_license':
+        return {
+          title: 'Invalid license key',
+          message: "This license key isn't active. It may have expired, been disabled, or doesn't exist. Double-check the key from your purchase email, or contact support if you need help.",
+        };
+
+      case 'wrong_product':
+        return {
+          title: 'Wrong product license',
+          message: "This license key is valid, but it was purchased for a different product. Make sure you're using the license key from your ShipGodot purchase.",
+        };
+
+      case 'activation_limit_reached':
+        return {
+          title: 'Activation limit reached',
+          message: 'This license has been used the maximum number of times.',
+        };
+
+      case 'already_collaborator':
+        return {
+          title: 'You already have access',
+          message: "You're already a collaborator on the ShipGodot template repository. Head to GitHub to start using the template — no further action needed.",
+        };
+
+      case 'unexpected':
+      default:
+        return {
+          title: 'Something went wrong',
+          message: "We hit an unexpected error while processing your request. This isn't your fault — please try again in a few minutes, or contact support if it keeps happening.",
+        };
+    }
+  }
   (function () {
     const params = new URLSearchParams(window.location.search);
     const err = params.get('err');
-    const el = document.getElementById('error-message');
-    if (err && el) {
-      el.textContent = err;
-    }
+    const title = document.getElementById('error-title');
+    const message = document.getElementById('error-message');
+    const pretty = getErrorMessage(err);
+    title.textContent = pretty.title;
+    message.textContent = pretty.message;
   })();
 </script>
 </html>
