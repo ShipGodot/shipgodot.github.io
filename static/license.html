@@ -29,9 +29,10 @@
         developed and distributed by CHACRON.ONE.
       </p>
       <p>
-        ShipGodot and its associated files (the "Software") are licensed, not sold. By obtaining
-        access to the Software through any channel authorized by the Licensor, you ("the Licensee")
-        agree to be bound by the following terms and conditions.
+        ShipGodot and its associated files (the "Software") are licensed, not sold. Access to the Software
+        is provided on a subscription basis. By obtaining access to the Software through any channel
+        authorized by the Licensor, you ("the Licensee") agree to be bound by the following terms and
+        conditions.
       </p>
       <section>
         <h2 class="font-display text-lg text-white mb-4">0. Definitions</h2>
@@ -55,7 +56,20 @@
         </p>
         <p class="mb-3">
           "<strong class="text-zinc-200">Licensee</strong>" refers to the individual or entity that has obtained
-          authorized access to the Software.
+          authorized access to the Software through an active subscription.
+        </p>
+        <p class="mb-3">
+          "<strong class="text-zinc-200">Subscription</strong>" refers to the paid, time-limited arrangement
+          under which the Licensee receives access to the Software repository and ongoing updates.
+        </p>
+        <p class="mb-3">
+          "<strong class="text-zinc-200">Active Subscription</strong>" means a subscription that has not
+          expired, been cancelled past its paid term, or otherwise been terminated.
+        </p>
+        <p class="mb-3">
+          "<strong class="text-zinc-200">Acquired Version</strong>" refers to any version of the Software
+          that the Licensee has obtained from the repository while their subscription was Active, including
+          any modifications they have made to it and any copies integrated into their own projects.
         </p>
         <p>
           "<strong class="text-zinc-200">Derivative Work</strong>" refers to any modification, adaptation, or
@@ -66,10 +80,11 @@
       <section>
         <h2 class="font-display text-lg text-white mb-4">1. Grant of License</h2>
         <p class="mb-3">
-          Subject to the terms of this license, the Licensor grants the Licensee a non-exclusive,
-          non-transferable, perpetual license to:
+          Subject to the terms of this license and contingent on an Active Subscription, the Licensor grants
+          the Licensee a non-exclusive, non-transferable license to:
         </p>
         <ul class="list-disc pl-5 space-y-1.5 mb-4">
+          <li>Access the Software repository and receive updates while the subscription is Active.</li>
           <li>Use, modify, and integrate the Software in their own private projects and products.</li>
           <li>Distribute compiled, built, or otherwise processed output of their projects that incorporates the Software, provided the Software's source code is not exposed in any public repository or unprotected distribution channel.</li>
           <li>Use the Software in commercial or non-commercial products.</li>
@@ -82,7 +97,26 @@
       </section>
 
       <section>
-        <h2 class="font-display text-lg text-white mb-4">2. Restrictions</h2>
+        <h2 class="font-display text-lg text-white mb-4">2. Subscription and Continued Use</h2>
+        <p class="mb-3">
+          Access to the Software is granted on a subscription basis. The following rules apply:
+        </p>
+        <ul class="list-disc pl-5 space-y-1.5 mb-4">
+          <li><strong class="text-zinc-200">While the subscription is Active:</strong> the Licensee has full access to the Software repository, receives all updates as they are published, and may use any version of the Software in their projects under the terms of Section 1.</li>
+          <li><strong class="text-zinc-200">When the subscription expires or is terminated:</strong> the Licensor will revoke the Licensee's access to the Software repository. The Licensee is no longer entitled to obtain new versions, updates, or fixes.</li>
+          <li><strong class="text-zinc-200">Surviving rights:</strong> The Licensee retains a perpetual, non-exclusive, non-transferable right to continue using, modifying, and shipping projects that incorporate Acquired Versions of the Software obtained during their Active Subscription. This includes continuing to operate CI/CD pipelines and projects built with copies of the Software already integrated before expiration.</li>
+          <li><strong class="text-zinc-200">No further copying after expiration:</strong> Once the subscription is no longer Active, the Licensee may not download, copy, or otherwise obtain any new portion of the Software, including from cached, archived, or third-party sources.</li>
+          <li><strong class="text-zinc-200">Resuming access:</strong> The Licensee may renew or restart their subscription at any time to regain repository access and resume receiving updates.</li>
+        </ul>
+        <p>
+          For clarity: this license does not grant the Licensee the right to a permanent copy of the Software
+          repository. The surviving rights described above apply only to Acquired Versions already integrated
+          into the Licensee's own projects at the moment the subscription ceased to be Active.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-display text-lg text-white mb-4">3. Restrictions</h2>
         <p class="mb-3">The Licensee may not:</p>
         <ul class="list-disc pl-5 space-y-1.5">
           <li>Distribute, resell, sublicense, or publicly share the Software's source code in substantial portions, including via public code repositories.</li>
@@ -90,11 +124,13 @@
           <li>Claim ownership of the Software or imply endorsement by the Licensor.</li>
           <li>Transfer this license to any other individual or entity.</li>
           <li>Remove, alter, or obscure any copyright header or proprietary notice from any file covered by this license.</li>
+          <li>Share, lend, or otherwise grant any other individual or entity access to the Software repository or to any version of the Software that was not authorized to be received through the recipient's own Active Subscription.</li>
+          <li>Continue to retain or use the Software in any form intended to circumvent the subscription requirement, beyond the surviving rights expressly granted in Section 2.</li>
         </ul>
       </section>
 
       <section>
-        <h2 class="font-display text-lg text-white mb-4">3. Copyright Headers</h2>
+        <h2 class="font-display text-lg text-white mb-4">4. Copyright Headers</h2>
         <p class="mb-4">
           All files covered by this license bear the following copyright header, which must be preserved in
           all copies and Derivative Works:
@@ -104,19 +140,19 @@
         <pre class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 mb-6 overflow-x-auto text-xs text-zinc-300"><code># Copyright © 2026 CHACRON.ONE. All rights reserved.
 # Licensed under the CHACRON.ONE Commercial License.
 # Unauthorized copying, distribution, or public disclosure is strictly prohibited.
-# See LICENSE.md or https://chacron.one for full terms.</code></pre>
+# See LICENSE.md or https://shipgodot.com/license for full terms.</code></pre>
 
         <p class="text-zinc-300 mb-2 text-xs uppercase tracking-wider">For Ruby/Fastlane files:</p>
         <pre class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 mb-4 overflow-x-auto text-xs text-zinc-300"><code># Copyright © 2026 CHACRON.ONE. All rights reserved.
 # Licensed under the CHACRON.ONE Commercial License.
 # Unauthorized copying, distribution, or public disclosure is strictly prohibited.
-# See LICENSE.md or https://chacron.one for full terms.</code></pre>
+# See LICENSE.md or https://shipgodot.com/license for full terms.</code></pre>
 
         <p>The presence of this header in a file is the definitive indicator that the file is covered by this license.</p>
       </section>
 
       <section>
-        <h2 class="font-display text-lg text-white mb-4">4. Ownership</h2>
+        <h2 class="font-display text-lg text-white mb-4">5. Ownership</h2>
         <p>
           The Software remains the exclusive intellectual property of CHACRON.ONE. All rights not expressly
           granted in this license are reserved by the Licensor.
@@ -124,7 +160,7 @@
       </section>
 
       <section>
-        <h2 class="font-display text-lg text-white mb-4">5. Warranty Disclaimer</h2>
+        <h2 class="font-display text-lg text-white mb-4">6. Warranty Disclaimer</h2>
         <p class="text-xs uppercase tracking-wide leading-relaxed">
           The Software is provided "as is", without warranty of any kind, express or implied, including but
           not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.
@@ -135,25 +171,32 @@
       </section>
 
       <section>
-        <h2 class="font-display text-lg text-white mb-4">6. Updates and Support</h2>
+        <h2 class="font-display text-lg text-white mb-4">7. Updates and Support</h2>
         <p>
-          Licensed users receive ongoing access to repository updates through GitHub. Support is provided at
-          the Licensor's discretion.
+          While the subscription is Active, the Licensee receives access to repository updates through GitHub
+          and may receive support at the Licensor's discretion. Both updates and support cease when the
+          subscription is no longer Active.
         </p>
       </section>
 
       <section>
-        <h2 class="font-display text-lg text-white mb-4">7. Termination</h2>
+        <h2 class="font-display text-lg text-white mb-4">8. Termination</h2>
         <p class="mb-3">
           This license is automatically and immediately terminated if the Licensee breaches any of its terms.
-          Upon termination, the Licensee must cease all use of the Software and destroy all copies in their
-          possession. Sections 4 (Ownership), 5 (Warranty Disclaimer), and 8 (Governing Law) survive termination.
+          Termination for breach is distinct from subscription expiration: upon termination for breach, the
+          Licensee must cease all use of the Software — including any Acquired Versions — and destroy all
+          copies in their possession. The surviving rights described in Section 2 do not apply in cases of
+          termination for breach.
+        </p>
+        <p class="mb-3">
+          Sections 5 (Ownership), 6 (Warranty Disclaimer), and 9 (Governing Law) survive termination of this
+          license under any circumstances.
         </p>
         <p>The Licensor reserves the right to pursue all available legal remedies in the event of a breach.</p>
       </section>
 
       <section>
-        <h2 class="font-display text-lg text-white mb-4">8. Governing Law</h2>
+        <h2 class="font-display text-lg text-white mb-4">9. Governing Law</h2>
         <p>
           This license shall be governed by and construed in accordance with the laws of the Republic of Poland.
           Any disputes arising from this license shall be subject to the exclusive jurisdiction of the courts
