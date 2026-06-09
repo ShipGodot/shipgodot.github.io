@@ -197,11 +197,59 @@
   <section id="pricing" class="max-w-5xl mx-auto px-6 py-28">
     <div class="text-center mb-12">
       <h2 class="font-display text-3xl sm:text-4xl text-white mb-3">Simple pricing.</h2>
-      <p class="text-zinc-500 text-sm">One plan. Billed yearly. Cancel anytime.</p>
+      <p class="text-zinc-500 text-sm">Subscribe and stay current, or grab a one-time snapshot.</p>
     </div>
-    <div class="max-w-sm mx-auto">
-      <div class="glow-card rounded-2xl p-8 text-center relative overflow-hidden">
+    <div class="max-w-3xl mx-auto grid sm:grid-cols-2 gap-6 items-stretch">
+
+      <!-- Snapshot tier (one-time) -->
+      <div class="glow-card rounded-2xl p-8 text-center relative overflow-hidden flex flex-col">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-zinc-400/40 to-transparent"></div>
+        <p class="text-xs uppercase tracking-widest text-zinc-500 mb-4">Snapshot</p>
+        <div class="mb-6">
+          <span class="font-display text-6xl text-white">$19</span>
+          <span class="text-zinc-500 text-sm ml-1">one-time</span>
+        </div>
+        <ul class="text-left space-y-3 mb-8 text-sm text-zinc-400">
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-zinc-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            Latest version of ShipGodot, delivered as a downloadable archive
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-zinc-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            Set up your own private template repository
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-zinc-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            CI/CD workflows — export, sign, and upload to TestFlight
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-zinc-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            Use on unlimited projects — personal or commercial
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-zinc-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            Yours to keep — no recurring payments, ever
+          </li>
+          <li class="flex items-start gap-2.5 text-zinc-500">
+            <svg class="w-4 h-4 text-zinc-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"/></svg>
+            Limited email support — critical bugs only
+          </li>
+          <li class="flex items-start gap-2.5 text-zinc-600">
+            <svg class="w-4 h-4 text-zinc-700 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            No future updates or new versions
+          </li>
+        </ul>
+        <a href="https://app.shipgodot.com/checkout/buy/483b19a7-0644-4784-8379-bdd6893dfc50"
+          class="btn-primary block w-full py-3 rounded-xl bg-transparent border border-zinc-700 text-zinc-200 font-medium text-sm hover:bg-zinc-800/40 hover:border-zinc-600 transition-colors mt-auto">
+          Get the snapshot
+        </a>
+        <p class="mt-4 text-xs text-zinc-600">By purchasing, you agree to the <a href="license" class="text-zinc-500 hover:text-zinc-300 transition-colors">License</a>.</p>
+      </div>
+
+      <!-- Subscription tier -->
+      <div class="glow-card rounded-2xl p-8 text-center relative overflow-hidden flex flex-col">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-zinc-400/40 to-transparent"></div>
+        <p class="text-xs uppercase tracking-widest text-zinc-500 mb-4">Subscription</p>
         <div class="mb-6">
           <span class="font-display text-6xl text-white">$29</span>
           <span class="text-zinc-500 text-sm ml-1">/ year</span>
@@ -217,7 +265,7 @@
           </li>
           <li class="flex items-start gap-2.5">
             <svg class="w-4 h-4 text-zinc-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            Step-by-step setup documentation
+            Ongoing updates as they're published
           </li>
           <li class="flex items-start gap-2.5">
             <svg class="w-4 h-4 text-zinc-300 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
@@ -233,50 +281,23 @@
           </li>
         </ul>
         <a href="https://app.shipgodot.com/checkout/buy/2471432d-d4b8-4406-ac66-946d00a1ab51"
-          class="btn-primary block w-full py-3 rounded-xl bg-zinc-100 text-zinc-950 font-medium text-sm hover:bg-white transition-colors">
+          class="btn-primary block w-full py-3 rounded-xl bg-zinc-100 text-zinc-950 font-medium text-sm hover:bg-white transition-colors mt-auto">
           Get access
         </a>
-        <p class="mt-4 text-xs text-zinc-600">Have a license key? <a href="redeem" class="text-zinc-500 hover:text-zinc-300 transition-colors">Redeem it here →</a></p>
-        <p class="border-t mt-6 pt-6 text-xs text-zinc-600 text-center leading-relaxed">
-          Builds run on your own GitHub Actions minutes and require an Apple Developer account ($99/year).
-          <a href="#faq" class="text-zinc-500 hover:text-zinc-300 transition-colors">See FAQ →</a>
-        </p>
+        <p class="mt-4 text-xs text-zinc-600">By purchasing, you agree to the <a href="license" class="text-zinc-500 hover:text-zinc-300 transition-colors">License</a>.</p>
       </div>
+
+    </div>
+
+    <div class="max-w-3xl mx-auto mt-8 border-t border-zinc-800/60 pt-6 text-center space-y-2">
+      <p class="text-xs text-zinc-600">Have a license key? <a href="redeem" class="text-zinc-500 hover:text-zinc-300 transition-colors">Redeem it here →</a></p>
+      <p class="text-xs text-zinc-600 leading-relaxed">
+        Builds run on your own GitHub Actions minutes and require an Apple Developer account ($99/year).
+        <a href="#faq" class="text-zinc-500 hover:text-zinc-300 transition-colors">See FAQ →</a>
+      </p>
     </div>
   </section>
   </div>
-
-<!-- Newsletter -->
-<section id="newsletter" class="border-t border-zinc-800/60 bg-zinc-900/30 py-24 px-6">
-  <div class="max-w-xl mx-auto text-center">
-    <h2 class="font-display text-3xl sm:text-4xl text-white mb-10">Get the newsletter.</h2>
-
-    <form
-      action="https://buttondown.com/api/emails/embed-subscribe/shipgodot"
-      method="post"
-      class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-    >
-      <input
-        type="email"
-        name="email"
-        placeholder="you@example.com"
-        required
-        class="flex-1 px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-zinc-600 transition-colors"
-      />
-      <button
-        type="submit"
-        class="btn-primary px-6 py-3 rounded-xl bg-zinc-100 text-zinc-950 font-medium text-sm hover:bg-white transition-colors whitespace-nowrap"
-      >
-        Subscribe
-      </button>
-    </form>
-    <p class="mt-4 text-xs text-zinc-600">
-      <a href="https://buttondown.com/refer/shipgodot" target="_blank">
-        Powered by Buttondown.
-      </a>
-    </p>
-  </div>
-</section>
 
   <!-- FAQ -->
   <section id="faq" class="border-t border-zinc-800/60 bg-zinc-900/20 py-24 px-6">
