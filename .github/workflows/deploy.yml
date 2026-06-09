@@ -1,34 +1,43 @@
 name: Deploy tutorial to Pages
 
 on:
-  push:
-    branches: [$default-branch]
   workflow_dispatch:
+    inputs:
+      version:
+        required: false
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
   build-docc:
+    if: ${{ github.event.inputs.version != '' }}
     runs-on: macos-15
+    env:
+      VERSION: ${{ github.event.inputs.version }}
     steps:
       - uses: actions/checkout@v5
         with:
           repository: shipgodot/docs
           lfs: true
-
-      - name: Build with DocC
-        run: xcrun docc convert ShipGodotIOS.docc/  --output-path ./docc-output
-
+          ref: ${{ github.event.inputs.version }}
+      - name: Build versioned DocC
+        run: |
+          mkdir -p ./docc-output
+          xcrun docc convert ShipGodotIOS.docc/ \
+            --output-path "./docc-output/${VERSION}" \
+            --transform-for-static-hosting \
+            --hosting-base-path "${VERSION}"
+      - name: Build latest DocC
+        run: |
+          xcrun docc convert ShipGodotIOS.docc/ \
+            --output-path "./docc-output/latest" \
+            --transform-for-static-hosting \
+            --hosting-base-path "latest"
       - name: Upload Exported Tutorial
         uses: actions/upload-artifact@v6
         with:
@@ -36,59 +45,41 @@ jobs:
           path: ./docc-output
           retention-days: 1
 
-  build:
+  build-and-deploy:
     needs: build-docc
+    if: ${{ always() && needs.build-docc.result != 'failure' && needs.build-docc.result != 'cancelled' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
         with:
           lfs: true
-
-      - uses: actions/download-artifact@v8
+      - name: Download DocC build
+        if: ${{ github.event.inputs.version != '' }}
+        uses: actions/download-artifact@v8
         with:
           name: docc-build
           path: ./docc-build
-
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: '24'
           cache: 'npm'
-
       - name: Install dependencies
         run: npm ci
-
       - name: Build Tailwind CSS
         run: npm run build
-
       - name: Merge with docc output
         run: |
-          rm docc-build/index.html
-          mv ./static/*.html ./docc-build/
-          mv ./static/favicon.ico ./docc-build/
-          mv ./static/css/styles.css ./docc-build/css/styles.css
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          mkdir -p public/css
+          if [ -d docc-build ]; then
+            cp -R docc-build/. public/
+          fi
+          cp ./static/*.html public/
+          cp ./static/favicon.ico public/
+          cp ./static/css/styles.css public/css/styles.css
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: './docc-build'
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          keep_files: true
